@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-cream: #ECECEC;
+  --color-olive: #84934A;
+  --color-olive-dark: #656D3F;
+  --color-maroon: #492828;
+  --color-white-warm: #FCF8F8;
+  --color-pink-light: #FBEFEF;
+  --color-pink: #F9DFDF;
+  --color-pink-medium: #F5AFAF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.react-flow__background {
+  background-color: #0a0a0a;
+}
+
+.react-flow__edge-path {
+  stroke: #7c3aed;
+  stroke-width: 2;
+}
+
+.react-flow__edge.animated path {
+  stroke-dasharray: 5;
+  animation: dashdraw 0.5s linear infinite;
+}
+
+@keyframes dashdraw {
+  from {
+    stroke-dashoffset: 10;
+  }
+}
+
+.node-executing {
+  animation: pulseGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4), 0 0 20px rgba(124, 58, 237, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(124, 58, 237, 0), 0 0 40px rgba(124, 58, 237, 0.6);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent 25%, rgba(255,255,255,0.1) 50%, transparent 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.workflow-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.react-flow__handle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid;
+}
+
+.react-flow__handle-left {
+  left: -6px;
+}
+
+.react-flow__handle-right {
+  right: -6px;
+}
+
+.react-flow__handle[data-handletype="text"] {
+  background: #60a5fa;
+  border-color: #2563eb;
+}
+
+.react-flow__handle[data-handletype="image"] {
+  background: #4ade80;
+  border-color: #16a34a;
+}
+
+.react-flow__handle[data-handletype="video"] {
+  background: #f97316;
+  border-color: #ea580c;
+}
+
+.react-flow__handle[data-handletype="number"] {
+  background: #e879f9;
+  border-color: #a21caf;
+}
+
+.react-flow__handle[data-handletype="any"] {
+  background: #94a3b8;
+  border-color: #64748b;
+}
